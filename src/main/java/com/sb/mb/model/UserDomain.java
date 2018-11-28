@@ -1,5 +1,7 @@
 package com.sb.mb.model;
 
+import java.io.Serializable;
+
 /**
  * @version 1.0
  * @description：
@@ -10,7 +12,7 @@ package com.sb.mb.model;
  * @date: 2018/11/14 下午1:45
  * @mofified By:
  */
-public class UserDomain {
+public class UserDomain implements Serializable {
 
     private Integer userId;
 

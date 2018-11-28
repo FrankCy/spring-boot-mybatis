@@ -1,6 +1,7 @@
 package com.sb.mb.service;
 
 import com.github.pagehelper.PageInfo;
+import com.sb.mb.model.BigText;
 import com.sb.mb.model.UserDomain;
 
 /**
@@ -16,6 +17,8 @@ import com.sb.mb.model.UserDomain;
 public interface UserService {
 
     int addUser(UserDomain user);
+
+    int addBigText(BigText bigText);
 
     PageInfo<UserDomain> findAllUser(int pageNum, int pageSize);
 

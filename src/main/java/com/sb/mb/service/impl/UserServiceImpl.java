@@ -2,7 +2,9 @@ package com.sb.mb.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.sb.mb.dao.BigTextDao;
 import com.sb.mb.dao.UserDao;
+import com.sb.mb.model.BigText;
 import com.sb.mb.model.UserDomain;
 import com.sb.mb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +29,19 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
 
+    @Autowired
+    private BigTextDao bigTextDao;
+
     @Override
     public int addUser(UserDomain user) {
 
         return userDao.insert(user);
+    }
+
+    @Override
+    public int addBigText(BigText bigText) {
+
+        return bigTextDao.insert(bigText);
     }
 
     /**

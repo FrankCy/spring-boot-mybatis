@@ -1,5 +1,6 @@
 package com.sb.mb.controller;
 
+import com.sb.mb.model.BigText;
 import com.sb.mb.model.UserDomain;
 import com.sb.mb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,4 +59,21 @@ public class UserController {
         return userService.findAllUser(pageNum,pageSize);
     }
 
+
+    /**
+     * @description：创建6万字节的数据往数据库中写
+     * @version 1.0
+     * @author: Yang.Chang
+     * @email: cy880708@163.com
+     * @date: 2018/11/14 下午1:52
+     * @mofified By:
+     */
+    @ResponseBody
+    @RequestMapping(value = "/addBody")
+    public int addBody(BigText bigText){
+        byte[] b = new byte[60000];
+        String body = new String(b);
+        bigText.setBody(body);
+        return userService.addBigText(bigText);
+    }
 }
