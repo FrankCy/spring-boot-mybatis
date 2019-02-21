@@ -38,7 +38,8 @@ public class UserController {
     @ResponseBody
     @RequestMapping(value = "/add")
     public int addUser(UserDomain user){
-        return userService.addUser(user);
+//        return userService.addUser(user);
+        return 1;
     }
 
     /**
